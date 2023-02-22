@@ -1,12 +1,20 @@
 <html>
-<head>
+	<head>
   <meta charset="UTF-8">
   <title>Start page</title>
-</head>
-<body>
-  <script>
-    window.alert("Redirected to second.html");
-    window.open('second.html',"_self");
-  </script>
-</body>
+	</head>
+		<body onload="call()">
+		<script> 
+			function call(){ 
+				var x = confirm("Click ok to go to Second page");
+		
+			if(x==true) {
+				window.open("second.html"); 
+			}else {
+				document.write("Error, Try again");
+			}
+		
+		}
+		</script>
+	</body>
 </html>
