@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Second Page</title>
+</head>
+<body>
+  <img src="image/p2.png" style="width: auto;height: 250px;" id="image" />
+  <p id="image_tag">image1</p>
+
+  <div>
+    <button onclick="changeImage()">Change Image</button>
+    <button onclick="revertImage()">Revert Image</button>
+  </div>
+
+  <script>
+    var image1Url = 'image/p2.png';
+    var image1Tag = 'image1';
+    var image2Url = 'image/p1.jpg';
+    var image2Tag = 'image2';
+    var image = document.getElementById('image');
+    var image_tag = document.getElementById('image_tag');
+    function changeImage() {
+      image.setAttribute('src', image2Url);
+      image_tag.innerHTML = image2Tag;
+    }
+    function revertImage() {
+      image.setAttribute('src', image1Url);
+      image_tag.innerHTML = image1Tag;
+    }
+
+  </script>
+</body>
+</html>
