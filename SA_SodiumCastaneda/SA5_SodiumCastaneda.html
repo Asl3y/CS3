@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Abraca's Flower Boutique </title>
+	<title> Len's Beverages </title>
 	<style>
       span {color: blue; text-decoration:underline}
       button {width: 100px; padding: 5px; background: pink;}
@@ -9,12 +9,12 @@
 
 	</head>
 <body>
-	<h1> Abraca's Flower Boutique </h1>
+	<h1> Len's Beverages </h1>
 	<h2> Please select from the following items </h2>
 	<ol>
-		<li> Allium price: 100.00 </li>
-		<li> Cornflower price: 250.00 </li>
-		<li> Roses price: 300.00 </li>
+		<li> Coffee: 100.00 </li>
+		<li> Ginger Tea: 250.00 </li>
+		<li> MilkShake: 300.00 </li>
 	</ol>
     <p> Item selected : <span id="item"> </span> </p>
 	<p> Qty bought : <span id="qty"> </span> </p>
@@ -30,12 +30,12 @@
 		
 		//to buy item
 		function buyItem(){
-			var itemNum = parseInt(prompt("What would you like to purchase? (Please input the number)."));
-			var itemAmount = parseInt(prompt("How many would you like to buy?"));
+			var itemNum = parseInt(prompt("Please enter what you want to purchase (Input the number)."));
+			var itemAmount = parseInt(prompt("How many would you like?"));
 			
 		//check
 			if(isNaN(itemNum) || isNaN(itemAmount) || itemNum > 3 || itemNum < 1){
-				return alert("Input invalid, Please try again.");
+				return alert("Input invalid, try again.");
 			} 
 			var totalPaid = 0;
 		// to know what is bought
