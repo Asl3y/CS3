@@ -12,39 +12,49 @@
 
 <body>
 	<div style="margin-top:5%">
-		<label>[Please enter a number between 2 and 10]</label><br />
-		<input type=number id=num1 /> by
-		<input type=number id=num2 /><br /><br />
-		<button onclick="multiply()">Please click here when ready!</button>
-		<br /><br />
-		<div id="target"></div>
+		<p>[Please enter a number between 2 and 10]</p>
+		<label for="n1"></label>
+		<input type=number id="num1"> <br>
+		<p>by</p>
+		<label for="n2"></label>
+		<input type=number id="num2"><br>
+		<button onclick="multiply()">Please click here to generate a table!</button>
+		
+		<table id="table"></table><br>
 	</div>
 	<script>
 		function multiply() {
-			let n1 = parseInt(document.getElementById("num1").value);
-			let n2 = parseInt(document.getElementById("num2").value);
-			var table = document.createElement("table");
-			let thead = document.createElement('thead');
-			let tbody = document.createElement ('tbody');
-			table.appendChild(thead);
-			table.appendChild(tbody);
-			document.getElementById('target').appendChild(table);
-			if (n1 >= 2 && n2 <= 10) {
-				for (let i = 1; i <= n1; i++){
-					var y = document.createElement("TR");
-					y.setAttribute("id", "myTr");
-					table.appendChild(y);
-					for (let j = 1; j <= n2; j++) {
-						var z = document.createElement("TD");
-						z.innerHTML = i * j
-						y.appendChild(z);
-					}
-					tbody.appendChild(y);
-				}
-			} else {
+			let n2 = parseInt(document.getElementById("num1").value);
+			let n1 = parseInt(document.getElementById("num2").value);
+			if (n1 < 2 || n1 > 10) {
 				alert("Please enter numbers between 2 and 10");
-			}
-		}
+				return;
+				}
+				else if (n2 < 2 || n2 > 10){
+				alert("Please enter numbers between 2 and 10");
+                return;
+                }
+    		else{
+            	var table=document.getElementById('table');
+    		var output="";
+      		for (var i=1;i<=n2;i++) {
+  		  		output +="<tr>";
+          			for (var j=1;j<=n1;j++) {
+          			if (i==1 && j==1)
+    		    		output+="<th>1</th>";
+    	    			else
+          				{
+        	  				if (i==1 || j==1)
+    		      				output+="<th>"+i*j+"</th>";
+    		    				else
+			        		output+="<td>"+i*j+"</td>"; 
+           				}
+        		}
+        		output +="</tr>";
+       		}
+    		table.innerHTML=output;
+   		} 
+       }
 	</script>
 </body>
 
