@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {box-sizing: border-box}
+
+#gender, input[type=text], input[type=password], input[type=email] {
+width: 100%;
+padding: 15px;
+margin: 5px 0 22px 0;
+display: inline-block;
+border-width: 2px;
+background: F9FBE7;
+}
+
+
+button:hover {
+opacity:1;
+}
+
+
+
+#container {
+padding: 16px;
+background-image: linear-gradient(#D7EEFF, #FAFFC7);
+}
+
+.clearfix::after {
+content: "";
+clear: both;
+display: table;
+}
+@media screen and (max-width: 300px) {
+}
+.submitbtn{
+    width: 100%;
+}
+
+:root {
+  --color-default: grey;
+  --color-invalid: red;
+  --color-valid: green;
+}
+
+input {
+  border: 2px solid var(--color-default);
+}
+
+
+input:focus {
+  outline: none;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: var(--color-invalid);
+}
+input:not(:focus):not(:placeholder-shown):invalid ~{
+  display: block; 
+}
+
+input:not(:focus):not(:placeholder-shown):valid {
+  border-color: var(--color-valid);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+ </style>
+ </head>
+<body>
+
+<form name="form1">
+  <div id="container">
+  <fieldset>
+  <legend>Sign-Up Page</legend>
+
+<label for="name"><b>Name</b></label>
+
+<input type="text" placeholder="Enter Name" name="name" id="name"  required/>
+
+<label for="username"><b>Username</b></label>
+
+<input type="text" placeholder="Enter Username"  name="username" id="username" required/><br>
+
+<label for="gender"><b>Gender</b></label>
+<select name="gender" id="gender"> 
+	<option value="" disabled selected hidden>Select Gender</option> 
+	<option value="male">Male</option> 
+    <option value="female">Female</option> 
+    <option value="Prefernottomention">Prefer not to mention</option> 
+   </select><br>
+
+<label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" id="password"  required/>
+
+<label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" id="email" required/>
+
+<label for="address"><b>Address</b></label>
+<input type="text" placeholder="Enter Address" name="address" id="address" required/>
+
+<label for="interests"><b>Your interests</b></label>
+<input type="text" placeholder="Enter Your Interests" name="interests" id="interests"  required/>
+
+    <div class="clearfix">
+       <input type="submit" onclick="onSubmit(event); return false" value="submit">
+    <input type="reset" value="Reset">
+    </div>
+  </div>
+  </fieldset>
+</form>
+ 
+        <p>Name: <span id="display_name"></span></p>
+        <p>Username: <span id="display_username"></span></p>
+        <p>Gender: <span id="display_gender"></span></p>
+        <p>Password: <span id="display_password"></span></p>
+        <p>Email: <span id="display_email"></span></p>
+        <p>Address: <span id="display_address"></span></p>
+        <p>Interests: <span id="display_interests"></span></p>
+</body>
+
+<script>
+
+function onSubmit() {
+document.getElementById('display_name').innerHTML = 
+                    document.getElementById("name").value;
+document.getElementById('display_username').innerHTML = 
+                    document.getElementById("username").value;
+document.getElementById('display_gender').innerHTML = 
+                    document.getElementById("gender").value;
+document.getElementById('display_password').innerHTML = 
+                    document.getElementById("password").value;
+document.getElementById('display_email').innerHTML = 
+                    document.getElementById("email").value;
+document.getElementById('display_address').innerHTML = 
+                    document.getElementById("address").value;
+document.getElementById('display_email').innerHTML = 
+                    document.getElementById("email").value;
+document.getElementById('display_interests').innerHTML = 
+                    document.getElementById("interests").value;
+}
+</script>
+</html>
